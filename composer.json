@@ -60,9 +60,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Larattributes\\Providers\\AttributesServiceProvider"
+                "Larattributes\\Providers\\EavServiceProvider"
             ]
         }
     },
+    "minimum-stability": "dev",
     "prefer-stable": true
 }
