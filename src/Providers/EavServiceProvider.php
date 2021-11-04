@@ -31,11 +31,20 @@ class EavServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(realpath(__DIR__.'/../../config/config.php'), 'larattributes');
+        $this->mergeConfigFrom(realpath(__DIR__.'/../../Config/config.php'), 'larattributes');
          Builder::macro('withAttributes', function ($args = false) { return EavQueryBuilder::withAttributes($this,$args);});
     }
 
 
+    protected function publishesConfig(string $package, bool $isModule = false): void
+    {
+
+        $basePath = $this->app->basePath('vendor/'.$package);
+
+        if (file_exists($path = $basePath.'/Config/config.php')) {
+            $this->publishes([$path => $this->app->configPath(str_replace('/', '.', $package).'.php')], $package.'::config');
+        }
+    }
 
 
 
