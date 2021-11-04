@@ -23,7 +23,7 @@ class EavServiceProvider extends ServiceProvider
         if (file_exists($path = $basePath.'/Config/config.php')) {
             $this->publishes([$path => $this->app->configPath(str_replace('/', '.', 'awssam/larattributes').'.php')], 'awssam/larattributes'.'::config');
         }
-        ! $this->autoloadMigrations('awssam/larattributes') || $this->loadMigrationsFrom(__DIR__.'/../../Database/Migrations');
+        $this->loadMigrationsFrom(__DIR__.'/../../Database/Migrations');
 
     }
 
