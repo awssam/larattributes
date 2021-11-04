@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-use Modules\Eav\Models\AttributableModel;
+use Larattributes\Models\AttributableModel;
 
 class CreateAttributesTable extends Migration
 {

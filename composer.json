@@ -60,7 +60,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Larattributes\\Providers\\EavServiceProvider"
+                "Larattributes\\Providers\\LarattributesServiceProvider"
             ]
         }
     },
