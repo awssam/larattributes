@@ -44,6 +44,7 @@ class EavQueryBuilder
         }
         if(is_array($attributes)){
             $model_attributes = self::loadEavAttributes($instance);  // change 2
+            if(!$model_attributes) throw new \Exception($instance." Model dont have attributes", 1);
             
             foreach ($attributes as $attribute) {
                 if ($model_attributes)
